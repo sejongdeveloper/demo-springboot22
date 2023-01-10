@@ -1,24 +1,17 @@
 package me.whiteship.demospringboot22;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConstructorBinding;
+import org.springframework.util.unit.DataSize;
 
 @ConstructorBinding
 @ConfigurationProperties(prefix = "chicken")
+@Getter
+@AllArgsConstructor
 public class ChickenProperties {
     private String name;
     private int count;
-
-    public ChickenProperties(String name, int count) {
-        this.name = name;
-        this.count = count;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getCount() {
-        return count;
-    }
+    private DataSize size;
 }
